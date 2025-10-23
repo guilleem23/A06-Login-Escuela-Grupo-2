@@ -30,3 +30,7 @@ insert into tbl_tipusUsuari (nom) values ('secretaria');
 insert into tbl_tipusUsuari (nom) values ('families');
 
 insert into tbl_usuari (nom, username, email, password, tipusUsuari) values ('admin', 'admin', 'admin@gmail.com', '1234asdf', 1);
+insert into tbl_usuari (nom, username, email, password, tipusUsuari) values ('profesor1', 'prof1', 'prof1@gmail.com', "1234asdf", 2);
+insert into tbl_usuari (nom, username, email, password, tipusUsuari) values ('alumne1', 'alu1', 'alu1@gmail.com', '1234asdf', 3);
+insert into tbl_usuari (nom, username, email, password, tipusUsuari) values ('secretaria1', 'secre1', 'secre1@gmail.com', '1234asdf', 4);
+insert into tbl_usuari (nom, username, email, password, tipusUsuari) values ('familia1', 'fam1', 'fam1@gmail.com', '1234asdf', 5);
