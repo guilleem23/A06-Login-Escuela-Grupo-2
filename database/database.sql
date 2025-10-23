@@ -6,7 +6,8 @@ create table tbl_usuari(
     idUsuari INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(50) NOT NULL,
     cognoms VARCHAR(80),
-    edad DATE NOT NULL,
+    username VARCHAR(50) NOT NULL,
+    edad DATE,
     email VARCHAR(60) NOT NULL,
     password VARCHAR(40) NOT NULL,
     tipusUsuari INT
@@ -20,3 +21,12 @@ create table tbl_tipusUsuari(
 alter table tbl_usuari
 add constraint tbl_usuari_tbl_tipusUsuari
 FOREIGN KEY(tipusUsuari) references tbl_tipusUsuari(idTipus);
+
+
+insert into tbl_tipusUsuari (nom) values ('administrador');
+insert into tbl_tipusUsuari (nom) values ('profesor');
+insert into tbl_tipusUsuari (nom) values ('alumne');
+insert into tbl_tipusUsuari (nom) values ('secretaria');
+insert into tbl_tipusUsuari (nom) values ('families');
+
+insert into tbl_usuari (nom, username, email, password, tipusUsuari) values ('admin', 'admin', 'admin@gmail.com', '1234asdf', 1);
