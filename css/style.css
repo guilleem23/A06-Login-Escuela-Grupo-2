@@ -1,0 +1,98 @@
+/* Fondo general */
+.login-body {
+    background-color: #1a1a1a;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Contenedor principal en dos columnas */
+  .login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+  }
+  
+  /* Columna izquierda con logo */
+  .login-left {
+    background: url("../img/fondo.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-left .logo {
+    max-width: 250px;
+    height: auto;
+  }
+  
+  /* Columna derecha con formulario */
+  .login-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  .login-form {
+    width: 80%;
+    max-width: 350px;
+  }
+  
+  .form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .input-field {
+    margin-bottom: 15px;
+  }
+  
+  .input-field .input {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 14px;
+  }
+  
+  .submit {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .submit:hover {
+    background-color: #333;
+  }
+  
+  /* Botón volver atrás */
+  .back-link {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+  
+  .boton-atras {
+    background-color: #FF59F7;
+    color: white;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .boton-atras:hover {
+    background-color: #a0379b;
+  }
+  
