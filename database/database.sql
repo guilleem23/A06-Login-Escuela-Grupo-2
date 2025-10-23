@@ -18,5 +18,5 @@ create table tbl_tipusUsuari(
 );
 
 alter table tbl_usuari
-add constrint tbl_usuari_tbl_tipusUsuari
+add constraint tbl_usuari_tbl_tipusUsuari
 FOREIGN KEY(tipusUsuari) references tbl_tipusUsuari(idTipus);
