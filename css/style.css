@@ -14,8 +14,6 @@
   
   /* Columna izquierda con logo */
   .login-left {
-    background: url("../img/fondo.jpg") no-repeat center center;
-    background-size: cover;
     display: flex;
     justify-content: center;  /* centra horizontalmente */
     align-items: center;      /* centra verticalmente */
@@ -33,7 +31,7 @@
   .logo {
     max-width: 600px;
     height: auto;
-    padding: 30px;
+    padding: 2rem;
   }
   
   /* Columna derecha con formulario */
@@ -129,3 +127,61 @@
     box-shadow: 1px 4px 6px rgb(57, 57, 57);
   }
   
+/* --- Estilos responsive para móvil --- */
+@media (max-width: 768px) {
+    .login-container {
+      grid-template-columns: 1fr;   /* una sola columna */
+      grid-template-rows: auto auto;
+      height: auto;                 /* altura automática */
+    }
+  
+    .login-left {
+      padding: 2rem 1rem;
+      background: none;             /* quitamos fondo si no quieres imagen en móvil */
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .div-logo {
+      border-radius: 30px;
+      padding: 1rem;
+      max-width: 90%;
+    }
+  
+    .logo {
+      max-width: 250px;             /* logo más pequeño en móvil */
+      padding: 0.5rem;
+    }
+  
+    .login-right {
+      margin: 1rem;
+      border-radius: 50px;
+      padding: 2rem 1rem;
+    }
+  
+    .login-form {
+      width: 100%;
+      padding: 0;
+    }
+  
+    .form-title {
+      font-size: 1.8rem;            /* título más pequeño */
+      margin-bottom: 20px;
+    }
+  
+    .input-field .input {
+      height: 45px;
+      font-size: 14px;
+    }
+  
+    .submit {
+      height: 45px;
+      font-size: 15px;
+    }
+  
+    .back-link {
+      position: static;             /* botón atrás fluye arriba */
+      margin: 1rem;
+      text-align: left;
+    }
+  }
