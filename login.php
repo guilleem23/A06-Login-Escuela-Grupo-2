@@ -10,13 +10,15 @@
 
   <!-- Botón para volver atrás -->
   <div class="back-link">
-    <a class="boton-atras" href="../index.php">Volver atrás</a>
+    <a class="boton-atras" href="./index.html">Volver atrás</a>
   </div>
 
   <div class="login-container">
     <!-- Columna izquierda con logo -->
     <div class="login-left">
-      <img class="logo" src="img/logo.png" alt="logo">
+        <div class="div-logo">
+            <img class="logo" src="img/logo.png" alt="logo">
+        </div>
     </div>
 
     <!-- Columna derecha con formulario -->
