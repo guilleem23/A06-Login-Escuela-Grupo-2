@@ -1,5 +1,5 @@
 <?php
-//Te envia al log
+//Te envia al login
 header('Location: ../proc/login.php');
 
 ?>
