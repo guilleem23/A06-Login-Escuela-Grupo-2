@@ -1,5 +1,8 @@
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c38f66799334b2cf473b3dedfeea6b634b18d8c8
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -43,4 +46,8 @@
   
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> c38f66799334b2cf473b3dedfeea6b634b18d8c8

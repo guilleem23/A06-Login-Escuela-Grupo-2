@@ -45,7 +45,7 @@ if ($ok) {
     header('Location: ../index.php');
     exit;
 } else {
-    // contraseña incorrecta
+    // contraseña incorrectaaaaaaaa
     header('Location: ../login.php?error=credenciales_invalidas');
     exit;
 }
