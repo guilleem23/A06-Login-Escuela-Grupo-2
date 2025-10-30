@@ -1,13 +1,16 @@
 <?php
 
-$servername = "localhost:3306";
+$servername = "localhost";
+$dbport = 3306;
 $dbusername = "root";
 $dbpassword = "";
 $dbname = "db_escola"; 
 
 try {
-	$conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $dbusername, $dbpassword);
+	// Use host and port separately in the DSN
+	$conn = new PDO("mysql:host=$servername;port=$dbport;dbname=$dbname;charset=utf8mb4", $dbusername, $dbpassword);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 } catch (PDOException $e) {
     error_log($e->getMessage());
     die('Error de conexión a la base de datos.');

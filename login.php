@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 
 
-=======
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -27,7 +25,7 @@
 
     <!-- Columna derecha con formulario -->
     <div class="login-right">
-      <form action="../proc/procesar_login.php" method="post" class="login-form">
+  <form action="proc/procesar_login.php" method="post" class="login-form">
         <h2 class="form-title">Iniciar Sesión</h2>
         <div class="input-field">
           <input class="input" type="text" id="username" name="username" placeholder="Usuario" required>
@@ -40,6 +38,9 @@
     </div>
   </div>
 
+</div>
+
+  
+
 </body>
 </html>
->>>>>>> 46488ca841d44e31010adb87293e58c6469f82d2
