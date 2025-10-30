@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-
-=======
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -42,4 +39,3 @@
 
 </body>
 </html>
->>>>>>> 46488ca841d44e31010adb87293e58c6469f82d2
