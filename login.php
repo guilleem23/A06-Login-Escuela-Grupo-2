@@ -1,8 +1,4 @@
-
-<<<<<<< HEAD
-
-=======
->>>>>>> c38f66799334b2cf473b3dedfeea6b634b18d8c8
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -14,9 +10,9 @@
 <body class="login-body">
 
   <!-- Botón para volver atrás -->
-  <div class="back-link">
+  <!-- <div class="back-link">
     <a class="boton-atras" href="./index.html">Volver atrás</a>
-  </div>
+  </div> -->
 
   <div class="login-container">
     <!-- Columna izquierda con logo -->
@@ -28,6 +24,18 @@
 
     <!-- Columna derecha con formulario -->
     <div class="login-right">
+
+<?php
+// Preparar el HTML del error pero no imprimirlo aún
+$alertHtml = '';
+if (!empty($_GET['error'])) {
+    $err = htmlspecialchars($_GET['error']);
+    $msg = 'Error desconocido.';
+    if ($err === 'credenciales_invalidas') $msg = 'Usuario o contraseña incorrectos.';
+    $alertHtml = '<div class="alert alert-danger" role="alert" style="margin:0 0 1rem 0;">' . $msg . '</div>';
+}
+?>
+
   <form action="proc/procesar_login.php" method="post" class="login-form">
         <h2 class="form-title">Iniciar Sesión</h2>
         <div class="input-field">
@@ -36,6 +44,10 @@
         <div class="input-field">
           <input class="input" type="password" id="password" name="password" placeholder="Contraseña" required>
         </div>
+
+        <!-- Mostrar el mensaje de error justo debajo del campo contraseña -->
+        <?php echo $alertHtml; ?>
+
         <button class="submit" type="submit">Iniciar Sesión</button>
       </form>
     </div>
@@ -43,11 +55,7 @@
 
 </div>
 
-  
-
 </body>
-<<<<<<< HEAD
+
 </html>
-=======
-</html>
->>>>>>> c38f66799334b2cf473b3dedfeea6b634b18d8c8
+
