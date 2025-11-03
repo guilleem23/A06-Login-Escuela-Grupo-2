@@ -36,7 +36,8 @@ if (!empty($_GET['error'])) {
 }
 ?>
 
-  <form action="proc/procesar_login.php" method="post" class="login-form">
+  <!-- Form: se añade id y novalidate -->
+  <form id="loginForm" action="proc/procesar_login.php" method="post" class="login-form" novalidate>
         <h2 class="form-title">Iniciar Sesión</h2>
         <div class="input-field">
           <input class="input" type="text" id="username" name="username" placeholder="Usuario" required>
@@ -45,8 +46,11 @@ if (!empty($_GET['error'])) {
           <input class="input" type="password" id="password" name="password" placeholder="Contraseña" required>
         </div>
 
-        <!-- Mostrar el mensaje de error justo debajo del campo contraseña -->
+        <!-- Mostrar el mensaje de error del servidor justo debajo del campo contraseña -->
         <?php echo $alertHtml; ?>
+
+        <!-- Contenedor para errores de validación en cliente -->
+        <div id="clientError" aria-live="polite"></div>
 
         <button class="submit" type="submit">Iniciar Sesión</button>
       </form>
@@ -55,6 +59,8 @@ if (!empty($_GET['error'])) {
 
 </div>
 
+<!-- Incluir archivo JS externo -->
+<script src="js/login-validation.js"></script>
 </body>
 
 </html>
