@@ -3,7 +3,7 @@
 $servername = "localhost";
 $dbport = 3306;
 $dbusername = "root";
-$dbpassword = "aa105f81";
+$dbpassword = "";
 $dbname = "db_escola"; 
 
 try {
