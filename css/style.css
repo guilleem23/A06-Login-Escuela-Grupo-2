@@ -52,12 +52,44 @@ z-index: 10;
 
 background-color: #fff;
 border-radius: 20px; 
-padding: 3rem 3.5rem; 
+padding: 2.5rem 3.5rem; /* CAMBIADO: Menos padding superior para pestañas */
 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 width: 100%;
 max-width: 450px; 
 box-sizing: border-box;
 }
+
+/* AÑADIDO: Estilos para pestañas Login/Register */
+.form-toggle {
+  display: flex;
+  margin-bottom: 1.5rem;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+.toggle-btn {
+  flex: 1; /* Ocupa la mitad del espacio */
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: transparent;
+  color: #888;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.toggle-btn.active {
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* AÑADIDO: Clase para ocultar formularios */
+.form-hidden {
+  display: none;
+}
+
 
 /* Formulario (sin cambios) */
 .login-form {
@@ -189,7 +221,6 @@ width: 100vw;
 /* --- 1. Barra Lateral --- */
 .dashboard-sidebar {
 width: 300px; 
-/* CAMBIADO: Fondo de tubos aplicado aquí */
 background-image: url('../img/fondo_login.png'); 
 background-size: cover;
 background-position: center;
@@ -217,11 +248,6 @@ width: 200px;
 display: block;
 }
 
-/* Simulación del fondo decorativo de curvas */
-/* AHORA OCULTO por la imagen de fondo. 
-  Si quieres que se vea, tendrías que 
-  poner la imagen de fondo en .sidebar-background 
-  en lugar de .dashboard-sidebar */
 .sidebar-background {
 position: absolute;
 top: 0;
