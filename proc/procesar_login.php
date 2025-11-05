@@ -14,6 +14,7 @@ $password = isset($_POST['password']) ? $_POST['password'] : '';
 
 // Validaciones básicas
 if ($username === '' || $password === '') {
+    // CAMBIADO: Aunque el JS lo valida, mantenemos una validación genérica por si JS falla
     header('Location: ../login.php?error=credenciales_invalidas');
     exit;
 }
@@ -32,8 +33,9 @@ $stmt = $conn->prepare($sql);
 $stmt->execute([':username' => $username]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+// CAMBIO 1: Si el usuario NO existe
 if (!$user) {
-    header('Location: ../login.php?error=credenciales_invalidas');
+    header('Location: ../login.php?error=usuario_invalido');
     exit;
 }
 
@@ -53,8 +55,9 @@ if (password_verify($password, $dbPass)) {
     }
 }
 
+// CAMBIO 2: Si el usuario SÍ existe, pero la contraseña es incorrecta
 if (!$authenticated) {
-    header('Location: ../login.php?error=credenciales_invalidas');
+    header('Location: ../login.php?error=password_invalida');
     exit;
 }
 

@@ -1,10 +1,16 @@
 <?php
 // Preparar el HTML del error de LOGIN
 $loginAlertHtml = '';
-if (!empty($_GET['error']) && empty($_GET['form'])) {
+// CAMBIADO: Comprobación más segura para el error de login
+if (!empty($_GET['error']) && !isset($_GET['form'])) {
     $err = htmlspecialchars($_GET['error']);
     $msg = 'Error desconocido.';
     if ($err === 'credenciales_invalidas') $msg = 'Usuario o contraseña incorrectos.';
+    
+    // AÑADIDO: Nuevos mensajes de error específicos
+    if ($err === 'usuario_invalido') $msg = 'El usuario introducido no existe.';
+    if ($err === 'password_invalida') $msg = 'La contraseña es incorrecta.';
+    
     $loginAlertHtml = '<div class="alert alert-danger" role="alert" style="margin:0 0 1rem 0;">' . $msg . '</div>';
 }
 
@@ -12,15 +18,24 @@ if (!empty($_GET['error']) && empty($_GET['form'])) {
 $registerAlertHtml = '';
 if (!empty($_GET['register_success'])) {
     $registerAlertHtml = '<div class="alert alert-success" role="alert" style="margin:0 0 1rem 0;">¡Registro completado! Ya puedes iniciar sesión.</div>';
-} elseif (!empty($_GET['error']) && $_GET['form'] === 'register') {
+// CAMBIADO: Comprobación más segura para el error de registro
+} elseif (isset($_GET['form']) && $_GET['form'] === 'register' && !empty($_GET['error'])) {
     $err = htmlspecialchars($_GET['error']);
     $msg = 'Error desconocido en el registro.';
+    // Errores existentes
     if ($err === 'campos_vacios') $msg = 'Todos los campos son obligatorios.';
     if ($err === 'email_invalido') $msg = 'El formato del email no es válido.';
     if ($err === 'password_no_coincide') $msg = 'Las contraseñas no coinciden.';
     if ($err === 'password_corta') $msg = 'La contraseña debe tener al menos 6 caracteres.';
     if ($err === 'username_existe') $msg = 'Este nombre de usuario ya está en uso.';
     if ($err === 'email_existe') $msg = 'Este email ya está registrado.';
+    // Nuevos errores (longitud y fecha)
+    if ($err === 'nom_largo') $msg = 'El nombre no puede tener más de 50 caracteres.';
+    if ($err === 'cognoms_largo') $msg = 'Los apellidos no pueden tener más de 80 caracteres.';
+    if ($err === 'username_largo') $msg = 'El usuario no puede tener más de 50 caracteres.';
+    if ($err === 'email_largo') $msg = 'El email no puede tener más de 60 caracteres.';
+    if ($err === 'fecha_invalida') $msg = 'El formato de la fecha no es válido (debe ser AAAA-MM-DD).';
+    if ($err === 'db_error') $msg = 'Error al procesar la solicitud. Inténtalo de nuevo.';
     
     $registerAlertHtml = '<div class="alert alert-danger" role="alert" style="margin:0 0 1rem 0;">' . $msg . '</div>';
 }
@@ -34,7 +49,7 @@ if (!empty($_GET['register_success'])) {
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
@@ -71,7 +86,7 @@ if (!empty($_GET['register_success'])) {
     
         <?php echo $loginAlertHtml; ?>
     
-        <div id="clientErrorLogin" aria-live="polite"></div>
+        <div id="clientErrorLogin" class="client-error" aria-live="polite"></div>
         
         <button class="submit" type="submit">Iniciar sesión</button>
       </form>
@@ -86,6 +101,16 @@ if (!empty($_GET['register_success'])) {
           <input class="input" type="text" id="reg_nom" name="nom" placeholder="Nombre" required>
         </div>
         
+        <div class="input-field">
+          <span class="input-icon"><i class="fas fa-user-friends"></i></span>
+          <input class="input" type="text" id="reg_cognoms" name="cognoms" placeholder="Apellidos" required>
+        </div>
+        
+        <div class="input-field">
+          <span class="input-icon"><i class="fas fa-calendar-alt"></i></span>
+          <input class="input" type="date" id="reg_edad" name="edad" placeholder="Fecha de Nacimiento" required>
+        </div>
+
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-user"></i></span>
           <input class="input" type="text" id="reg_username" name="username" placeholder="Usuario (para login)" required>
@@ -108,7 +133,7 @@ if (!empty($_GET['register_success'])) {
     
         <?php echo $registerAlertHtml; ?>
     
-        <div id="clientErrorRegister" aria-live="polite"></div>
+        <div id="clientErrorRegister" class="client-error" aria-live="polite"></div>
         
         <button class="submit" type="submit">Registrarse</button>
       </form>
