@@ -77,12 +77,12 @@ if (!empty($_GET['register_success'])) {
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-user"></i></span>
           <input class="input" type="text" id="username" name="username" placeholder="Usuario" required>
-        </div>
+          <div class="input-error-message"></div> </div>
         
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-lock"></i></span>
           <input class="input" type="password" id="password" name="password" placeholder="Contraseña" required>
-        </div>
+          <div class="input-error-message"></div> </div>
     
         <?php echo $loginAlertHtml; ?>
     
@@ -99,37 +99,37 @@ if (!empty($_GET['register_success'])) {
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-user-circle"></i></span>
           <input class="input" type="text" id="reg_nom" name="nom" placeholder="Nombre" required>
-        </div>
+          <div class="input-error-message"></div> </div>
         
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-user-friends"></i></span>
           <input class="input" type="text" id="reg_cognoms" name="cognoms" placeholder="Apellidos" required>
-        </div>
+          <div class="input-error-message"></div> </div>
         
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-calendar-alt"></i></span>
           <input class="input" type="date" id="reg_edad" name="edad" placeholder="Fecha de Nacimiento" required>
-        </div>
+          <div class="input-error-message"></div> </div>
 
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-user"></i></span>
           <input class="input" type="text" id="reg_username" name="username" placeholder="Usuario (para login)" required>
-        </div>
+          <div class="input-error-message"></div> </div>
 
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-envelope"></i></span>
           <input class="input" type="email" id="reg_email" name="email" placeholder="Email" required>
-        </div>
+          <div class="input-error-message"></div> </div>
         
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-lock"></i></span>
           <input class="input" type="password" id="reg_password" name="password" placeholder="Contraseña" required>
-        </div>
+          <div class="input-error-message"></div> </div>
 
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-lock"></i></span>
           <input class="input" type="password" id="reg_password_confirm" name="password_confirm" placeholder="Confirmar Contraseña" required>
-        </div>
+          <div class="input-error-message"></div> </div>
     
         <?php echo $registerAlertHtml; ?>
     
