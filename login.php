@@ -19,18 +19,6 @@
 
     <!-- Columna derecha con formulario -->
     <div class="login-right">
-
-      <?php
-      // Preparar el HTML del error pero no imprimirlo aún
-      $alertHtml = '';
-      if (!empty($_GET['error'])) {
-          $err = htmlspecialchars($_GET['error']);
-          $msg = 'Error desconocido.';
-          if ($err === 'credenciales_invalidas') $msg = 'Usuario o contraseña incorrectos.';
-          $alertHtml = '<div class="alert alert-danger" role="alert" style="margin:0 0 1rem 0;">' . $msg . '</div>';
-      }
-      ?>
-
         <!-- Form: se añade id y novalidate -->
         <form id="loginForm" action="proc/procesar_login.php" method="post" class="login-form" novalidate>
           <h2 class="form-title">Iniciar Sesión</h2>
