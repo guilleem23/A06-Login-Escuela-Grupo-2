@@ -4,7 +4,7 @@ $servername = "localhost";
 $dbport = 3306;
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_escola"; 
+$dbname = "bd_escola"; 
 
 try {
 	$conn = new PDO("mysql:host=$servername;port=$dbport;dbname=$dbname;charset=utf8mb4", $dbusername, $dbpassword);

@@ -105,10 +105,25 @@ if (!empty($_GET['register_success'])) {
           <span class="input-icon"><i class="fas fa-user-friends"></i></span>
           <input class="input" type="text" id="reg_cognoms" name="cognoms" placeholder="Apellidos" required>
           <div class="input-error-message"></div> </div>
+
+        <!-- tipo usuario -->
+         
+        <div class="input-field">
+          <span class="input-icon"><i class="fas fa-user-shield"></i></span>
+          <select class="input" id="reg_tipusUsuari" name="tipusUsuari" required>
+            <option value="">Selecciona un rol...</option>
+            <?php foreach ($tipusList as $t): ?>
+              <option value="<?= $t['idTipus'] ?>">
+            <?= htmlspecialchars($t['nom']) ?>
+              </option>
+            <?php endforeach; ?>
+          </select>
+          <div class="input-error-message"></div>
+        </div>
         
         <div class="input-field">
           <span class="input-icon"><i class="fas fa-calendar-alt"></i></span>
-          <input class="input" type="date" id="reg_edad" name="edad" placeholder="Fecha de Nacimiento" required>
+          <input class="input" type="date" id="reg_edad" name="fechaNacimiento" placeholder="Fecha de Nacimiento" required>
           <div class="input-error-message"></div> </div>
 
         <div class="input-field">
